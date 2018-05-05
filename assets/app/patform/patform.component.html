@@ -1,0 +1,191 @@
+<div id="mainhd">
+  <div id="wrapper" class="container clearfix">
+      <h2 class="text-nowrap headd"><strong>New Patient</strong></h2>
+     <a routerLink="" id="addButton">Directory</a> 
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <fieldset class="scheduler-border">
+        <legend class="scheduler-border">Patient Registration Form</legend>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="fname">First Name* :</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                id="fname" 
+                placeholder="First Name"
+                ngModel
+                #fn="ngModel"
+                name="fname"
+                required
+                maxlength="100"
+                pattern="[A-Za-z]{1,100}">
+         
+         
+          <div *ngIf="fn.invalid && (fn.dirty || fn.touched)"
+           class="alert alert-danger">
+          <div *ngIf="fn.errors.required">
+          First Name is required
+          </div>
+         <div *ngIf="fn.errors.pattern">
+          Name must contain alphabets only
+         </div>
+         </div>
+      </div>
+      
+          <div class="form-group col-md-6">
+            <label for="lname">Last Name* :</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                id="lname" 
+                placeholder="Last Name"
+                ngModel
+                #l="ngModel"
+                name="lname"
+                maxlength="100"
+                pattern="[A-Za-z]{1,100}"
+                required>
+      
+          <div *ngIf="l.invalid && (l.dirty || l.touched)"
+           class="alert alert-danger">
+          <div *ngIf="l.errors.required">
+          Last Name is required
+          </div>
+         <div *ngIf="l.errors.pattern">
+          Name must contain alphabets only
+         </div>
+         </div>
+      
+        </div>
+        </div>
+      
+        <div class="row">
+      
+          <div class="form-group col-md-5">
+            <label for="dob">Date of Birth* :</label>
+            <input 
+                type="date" 
+                class="form-control" 
+                id="dob" 
+                placeholder="DD/MM/YYYY"
+                ngModel
+                #d="ngModel"
+                name="dob"
+                required>
+                <div *ngIf="d.invalid && (d.dirty || d.touched)"
+           class="alert alert-danger">
+              <div *ngIf="d.errors.required">
+          Date of Birth is required
+          </div>
+      
+         </div>
+          </div>
+      
+          <div class="form-group offset-md-1 col-md-4">
+            <label for="age">Age* :</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                id="age"
+                ngModel
+                #a = "ngModel"
+                name="age"
+                required
+                maxlength="3"
+                max="150"
+                pattern="[0-9]{1,3}"
+              >
+                <div *ngIf="a.invalid && (a.dirty || a.touched)"
+           class="alert alert-danger">
+          <div *ngIf="a.errors.required">
+          Please fill this entry!
+          </div>
+         <div *ngIf="a.errors.pattern">
+          Age contains numerical value only!
+         </div>
+         </div>
+         <div *ngIf="agefield"
+         class="alert alert-danger">
+            Please Enter value between 1-150
+           </div>
+          </div>
+        
+        </div>
+  
+      
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="gender">Gender* :</label>
+                <select 
+                    id="gender" 
+                    class="form-control"
+                    style="height:34px"
+                    ngModel
+                    #g = "ngModel"
+                    name="gender"
+                    required>
+                  <option value="m">Male</option>
+                  <option value="f">Female</option>
+                  <option value="o">Other</option>
+                </select>
+            <div *ngIf="g.invalid && (g.dirty || g.touched)"
+            class="alert alert-danger">
+           <div *ngIf="g.errors.required">
+           Please select!
+           </div>
+        </div>
+        </div>
+        <div class="form-group offset-md-3 col-md-4">
+          <label for="cont">Phone No* :</label>
+          <input 
+              type="text" 
+              class="form-control" 
+              id="cont" 
+              ngModel
+              #cont = "ngModel"
+              name="cont"
+              required
+              maxlength="10"
+              pattern="[0-9]{1,10}">
+              <div *ngIf="cont.invalid && (cont.dirty || cont.touched)"
+       class="alert alert-danger">
+      <div *ngIf="cont.errors.required">
+      Contact Number is required
+      </div>
+     <div *ngIf="confield">
+      Mobile number must be of 10 digits!
+     </div>
+     </div>
+        </div>
+  
+      </div>
+  
+      <div class="form-group">
+          <label for="pinfo">Other Information :</label>
+          <textarea 
+              class="form-control" 
+              id="pinfo" 
+              rows="4"
+              ngModel
+              #info = "ngModel"
+              name="pinfo"
+              >
+            </textarea>
+      </div>
+  
+    <button type="submit" [disabled] = "f.invalid" class="btn btn-primary">Submit</button>
+  
+  </fieldset>
+  </form>
+  </div>
+</div>
+
+
+          
