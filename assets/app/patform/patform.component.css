@@ -1,0 +1,65 @@
+form{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+button{
+    position:relative;
+    left: 42%;
+}
+fieldset.scheduler-border {
+    border: 2px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+
+
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+
+}
+
+legend.scheduler-border {
+    font-size: 1.7em !important;
+    color: #ddd;
+    font-weight: bold !important;
+    text-align: left !important;
+    padding-left: 20px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: rgb(11, 59, 95);
+}
+.form-control{
+    border-width: 2px;
+}
+
+.headd{
+    font-family: 'Open Sans', sans-serif;
+  }
+
+a{
+    float:right;
+    margin-left:60%;
+    background:#6666ff;
+    color:white;
+    font-weight:bolder;
+    padding: 11px 22px 11px 22px;
+  }
+  
+h2{
+    float:left;
+    margin-left:05%;
+  }
+  
+div#mainhd{
+    background-color:white;
+    width:100%;
+  }
+
+#wrapper{
+    display:flex;
+    align-items:center;
+    height:8em;
+    margin-bottom:30px;
+  }
+label{
+    font-weight: 900;
+}
