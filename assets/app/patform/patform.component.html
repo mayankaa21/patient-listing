@@ -112,7 +112,9 @@
           <div *ngIf="a.errors.required">
           Please fill this entry!
           </div>
-      
+       <div *ngIf="a.errors.pattern">
+         Please enter numerical values only!
+          </div>
          </div>
          <div *ngIf="agefield"
          class="alert alert-danger">
