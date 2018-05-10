@@ -129,6 +129,7 @@ finyear:number;
   }
 
   onSubmit(data: NgForm){
+    this.increment=0;
     this.dobfield = false;
     this.validdata = false;
     var date2 = this.currdate();
